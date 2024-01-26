@@ -49,6 +49,7 @@ public class CreateContactWithMandotaryFields extends BaseClass {
 			System.out.println("FAIL");
 		}
 		
+		System.out.println("S C M from junkins");
 
 	}
 
