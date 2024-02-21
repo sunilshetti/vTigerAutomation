@@ -11,9 +11,17 @@ public class HomePage extends SeleniumUtility
 {
 	
 	@FindBy(linkText = "Contacts") 	private WebElement ContactsHeader;
-	@FindBy(xpath = "//img[@src='themes/softed/images/user.PNG']") private WebElement ProfileImg;
-	@FindBy(linkText = "Sign Out") private WebElement SingOutBtn;
 	
+	@FindBy(linkText = "Products")
+	private WebElement ProductHeader;
+	
+	
+	@FindBy(xpath = "//img[@src='themes/softed/images/user.PNG']") 
+	private WebElement ProfileImg;
+	
+	@FindBy(linkText = "Sign Out") 
+	private WebElement SingOutBtn;
+
 	
 	
 	public HomePage(WebDriver driver)
@@ -34,6 +42,12 @@ public class HomePage extends SeleniumUtility
 	{
 		return SingOutBtn;
 	}
+	public WebElement getProductHeader()
+	{
+		return ProductHeader;
+	}
+	
+	
 	
 	
 	
@@ -48,15 +62,17 @@ public class HomePage extends SeleniumUtility
 		ContactsHeader.click();
 	}
 	
-	
 	public void logOut(WebDriver driver) throws InterruptedException
 	{
-			
 		mouseOverAction(driver, ProfileImg);
 		Thread.sleep(2000);	
 		//getSignout().click();
 		SingOutBtn.click();
-
+	}
+	
+	public void ProductHeaderClick()
+	{
+		ProductHeader.click();
 	}
 	
 
